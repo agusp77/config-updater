@@ -7,7 +7,8 @@
 
 TARGETDIR="/etc/telegraf/"
 TARGET="/etc/telegraf/telegraf.conf"
-snowflakePath=$TARGETDIR".cache/snowflake/"
+cachePath=$TARGETDIR".cache/"
+snowflakePath=$cachePath"snowflake/"
 
 old_text1="http://"
 new_text1="https://"
@@ -18,7 +19,7 @@ sed -i 's/$old_text1/$new_text1/g' $TARGET
 echo $add_text1 >> $TARGET
 
 mkdir -p $snowflakePath
-chown -R telegraf.telegraf $snowflakePath
+chown -R telegraf.telegraf $cachePath
 
 systemctl restart telegraf
 
