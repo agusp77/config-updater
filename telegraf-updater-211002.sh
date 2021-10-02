@@ -10,8 +10,8 @@ TARGET="/etc/telegraf/telegraf.conf"
 cachePath=$TARGETDIR".cache/"
 snowflakePath=$cachePath"snowflake/"
 
-old_text1="http://"
-new_text1="https://"
+old_text1="http://139.59.251.65:8086"
+new_text1="https://139.59.251.65:8086"
 add_text1="insecure_skip_verify = true"
 
 sed -i 's/$old_text1/$new_text1/g' $TARGET
