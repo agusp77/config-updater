@@ -14,6 +14,10 @@ add_text="insecure_skip_verify = true"
 sed -i 's/$old_text1/$new_text1/g' $TARGET
 echo $add_text >> $TARGET
 
+systemctl restart telegraf
+
+echo "--------------------------------------------------------------------------"
+systemctl status telegraf
 echo "--------------------------------------------------------------------------"
 cat $TARGET
 echo "--------------------------------------------------------------------------"
