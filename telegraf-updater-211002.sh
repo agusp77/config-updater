@@ -5,17 +5,17 @@
 # Turn the influxdb url from http to https
 #
 
-PATH="/etc/telegraf/telegraf.conf"
+TARGET="/etc/telegraf/telegraf.conf"
 
 old_text1="http://"
 new_text1="https://"
 add_text="insecure_skip_verify = true"
 
-sed -i 's/$old_text1/$new_text1/g' $PATH
-echo $add_text >> $PATH
+sed -i 's/$old_text1/$new_text1/g' $TARGET
+echo $add_text >> $TARGET
 
 echo "--------------------------------------------------------------------------"
-cat $PATH
+cat $TARGET
 echo "--------------------------------------------------------------------------"
 echo "Finished Updating"
 
